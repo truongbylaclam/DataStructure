@@ -18,20 +18,13 @@ class Node(object):
 class LinkedList(object):
     def __init__(self, head= None):
         self.head = head
-<<<<<<< HEAD
         self.count = 0  
     def getCount(self):
         return self.count
-=======
-        self.count = 0
-    def getCount(self):
-        return self.count;
->>>>>>> 769cc19d5d48b1bdf476c6cf414e4ac603cb944e
     def insert(self, data):
         new_node = Node(data)
         new_node.setNext(self.head)
         self.head = new_node
-<<<<<<< HEAD
         self.count += 1
         print("Insert completed")
     def find(self, val):
@@ -46,21 +39,20 @@ class LinkedList(object):
         if idx > self.count - 1:
             return
         if idx == 0:
-            self.head = self.head.getNext();
+            self.head = self.head.getNext()
         else:
             tempidx = 0
-            return
-=======
-        self.count += 1;
-    def find(self, val):
-        item = self.head
-        while (item != None):
-            if item.getVal() == val:
-                return item
-            else:
-                item = item.getNext()
->>>>>>> 769cc19d5d48b1bdf476c6cf414e4ac603cb944e
-
+            node = self.head
+            while tempidx < idx - 1:
+                node = node.getNext()
+                tempidx += 1
+            node.setNext(node.getNext().getNext())
+            self.count -= 1
+    def dump_list(self):
+        tempnode = self.head
+        while (tempnode != None):
+            print("Node :", tempnode.getVal())
+            tempnode = tempnode.getNext()
 list = LinkedList()
 list.insert(10)
 
@@ -70,6 +62,12 @@ Item = LinkedList()
 Item.insert(10)
 Item.insert(20)
 Item.insert(30)
+Item.dump_list()
 
 print("Item count", Item.getCount())
 print("Finding Item", Item.find(20))
+
+Item.deleteAt(3)
+print("Item count", Item.getCount())
+print("Finding Item", Item.find(30))
+Item.dump_list()
