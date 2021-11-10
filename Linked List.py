@@ -18,13 +18,20 @@ class Node(object):
 class LinkedList(object):
     def __init__(self, head= None):
         self.head = head
+<<<<<<< HEAD
         self.count = 0  
     def getCount(self):
         return self.count
+=======
+        self.count = 0
+    def getCount(self):
+        return self.count;
+>>>>>>> 769cc19d5d48b1bdf476c6cf414e4ac603cb944e
     def insert(self, data):
         new_node = Node(data)
         new_node.setNext(self.head)
         self.head = new_node
+<<<<<<< HEAD
         self.count += 1
         print("Insert completed")
     def find(self, val):
@@ -43,9 +50,26 @@ class LinkedList(object):
         else:
             tempidx = 0
             return
+=======
+        self.count += 1;
+    def find(self, val):
+        item = self.head
+        while (item != None):
+            if item.getVal() == val:
+                return item
+            else:
+                item = item.getNext()
+>>>>>>> 769cc19d5d48b1bdf476c6cf414e4ac603cb944e
 
 list = LinkedList()
 list.insert(10)
 
 print(list.getCount())
 
+Item = LinkedList()
+Item.insert(10)
+Item.insert(20)
+Item.insert(30)
+
+print("Item count", Item.getCount())
+print("Finding Item", Item.find(20))
