@@ -15,7 +15,7 @@ for x in cars:
 ## Unlike C++ Array, Python list size is adaptive so you can
 ## easily insert an element into the List without worry about
 ## getting out of high bound
-cars.append("Subasa")
+cars.append("Subaru")
 
 ## The function Pop in the List ressemble the pop function in
 ## Stack but it can used with an index.
