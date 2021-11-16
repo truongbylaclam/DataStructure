@@ -1,0 +1,20 @@
+Merge Sort
+
+def mergeSort(dataset):
+    # Break down the array by half as long as the array size is greater than 1
+    if len(dataset) > 1:
+        mid = len(dataset) // 2
+        leftarr = [:mid]
+        rightarr = [mid:]
+
+    # Recursively break down the array
+    mergeSort(leftarr)
+    mergeSort(rightarr)
+    # Merge the array
+    i = 0 #Left arr index
+    j = 0 #Right arr index
+    k = 0 #Merged arr index
+    # Add the sorted result into the new array  
+    sortarr = []
+
+    while i < len(leftarr) and j < len(rightarr):

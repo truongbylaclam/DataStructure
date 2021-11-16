@@ -19,14 +19,17 @@ class LinkedList(object):
     def __init__(self, head= None):
         self.head = head
         self.count = 0  
-    def getCount(self):
+
+    def get_count(self):
         return self.count
+
     def insert(self, data):
         new_node = Node(data)
         new_node.setNext(self.head)
         self.head = new_node
         self.count += 1
         print("Insert completed")
+
     def find(self, val):
         item = self.head
         while (item != None):
@@ -35,8 +38,9 @@ class LinkedList(object):
             else:
                 item = item.getNext()
         return None
+
     def deleteAt(self, idx):
-        if idx > self.count - 1:
+        if idx > self.count:
             return
         if idx == 0:
             self.head = self.head.getNext()
@@ -46,28 +50,33 @@ class LinkedList(object):
             while tempidx < idx - 1:
                 node = node.getNext()
                 tempidx += 1
-            node.setNext(node.getNext().getNext())
+            tempnode = self.head.getNext()
+            node.setNext(tempnode.getNext())
             self.count -= 1
     def dump_list(self):
         tempnode = self.head
         while (tempnode != None):
             print("Node :", tempnode.getVal())
             tempnode = tempnode.getNext()
-list = LinkedList()
-list.insert(10)
 
-print(list.getCount())
 
-Item = LinkedList()
-Item.insert(10)
-Item.insert(20)
-Item.insert(30)
-Item.dump_list()
+itemlist = LinkedList()
+itemlist.insert(38)
+itemlist.insert(49)
+itemlist.insert(13)
+itemlist.insert(15)
 
-print("Item count", Item.getCount())
-print("Finding Item", Item.find(20))
+itemlist.dump_list()
 
-Item.deleteAt(3)
-print("Item count", Item.getCount())
-print("Finding Item", Item.find(30))
-Item.dump_list()
+# exercise the list
+print("Item count: ", itemlist.get_count())
+print("Finding item: ", itemlist.find(13))
+print("Finding item: ", itemlist.find(78))
+
+# delete an item
+itemlist.deleteAt(3)
+print("Item count: ", itemlist.get_count())
+print("Finding item: ", itemlist.find(38))
+itemlist.dump_list()
+
+
