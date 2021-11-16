@@ -5,7 +5,7 @@ Created on Mon Mar  8 20:46:56 2021
 @author: Eyan
 """
 
-# Dictionary
+# Dictionary AKA Hash Table in other language
 # Holding data as key-value pairs is important especially in distributed algorithms. In
 # Python, a collection of these key-value pairs is stored as a data structure called a dictionary.
 # This is very simiar to Hash
