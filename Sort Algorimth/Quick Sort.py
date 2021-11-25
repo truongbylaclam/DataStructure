@@ -33,15 +33,15 @@ def partition(datavalues, first, last):
         if upper < lower:
             done = True
         else:
-            temp = datavalues[lower]
-            datavalues[lower] = datavalues[upper]
-            datavalues[upper] = temp
+            # temp = datavalues[lower]
+            # datavalues[lower] = datavalues[upper]
+            # datavalues[upper] = temp
+            datavalues[lower], datavalues[upper] = datavalues[upper], datavalues[lower]
     # When the split point is found, exhchange the pivot value
-    temp = datavalues[first]
-    datavalues[first] = datavalues[upper]
-    datavalues[upper] =temp
-    #datavalues[lower], datavalues[upper] = datavalues[upper], datavalues[lower] 
-
+    # temp = datavalues[first]
+    # datavalues[first] = datavalues[upper]
+    # datavalues[upper] = temp
+    datavalues[first], datavalues[upper] = datavalues[upper], datavalues[first]
     # Return the plit point index
     return upper
 

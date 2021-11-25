@@ -12,6 +12,7 @@ def mergeSort(dataset):
         mergeSort(leftarr)
         mergeSort(rightarr)
         # Merge the array
+        
         i = 0 #Left arr index
         j = 0 #Right arr index
         k = 0 #Merged arr index
