@@ -16,15 +16,17 @@ def BinarySearch(item, itemList):
         # Caluclate midpoint
         midPoint = (lowerIdx + upperIdx) // 2
 
-        # If midpoint is found, return the index
+        # If midpoint is equak to the searching target, return the index
         if itemList[midPoint] == item:
             return midPoint
         
-        # Otherwise get the next midpoint
+        # Otherwise move the lower index above the midpoint if the searching value is greater
+        # than the midpoint value
         if item > itemList[midPoint]:
             lowerIdx = midPoint + 1
+        # Or move the upper index below the midpoint of the item is lower than midpoint value
         else:
-            upperIdx = midPoint + 1
+            upperIdx = midPoint - 1
 
     if lowerIdx > upperIdx:
         return None
